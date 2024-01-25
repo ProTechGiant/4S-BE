@@ -1,0 +1,14 @@
+{
+  "type": "mysql",
+  "host": "127.0.0.1",
+  "port": 3306,
+  "username": "root",
+  "password": "",
+  "database": "iot-core",
+  "entities": ["src/**/entity/*.ts"],
+  "synchronize": false,
+  "logging": true,
+  "migrations": ["src/**/migration/*.ts"],
+  "seeds": ["src/**/seeders/*.ts"],
+  "cli": { "migrationsDir": "src/database/migrations" }
+}

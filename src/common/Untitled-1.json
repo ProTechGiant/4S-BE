@@ -1,0 +1,34 @@
+{
+    "cards": [
+        {
+            "entity": "Personnel",
+            "friendlyName": "Personnel"
+        },
+        {
+            "entity": "Area",
+            "friendlyName": "Area"
+        },
+        {
+            "entity": "Sensor",
+            "friendlyName": "Sensor"
+        },
+        {
+            "entity": "Asset",
+            "friendlyName": "Asset"
+        }
+    ],
+    "table": "WirepasFloorlevel",
+    "charts": [
+        {
+            "entity": "WirepasFloorlevel",
+            "friendlyName": "Floorlevel",
+            "chart": "pieChart"
+        },
+        {
+            "entity": "Sensor",
+            "friendlyName": "Sensor",
+            "chart": "histoGrim"
+        }
+
+    ]
+}

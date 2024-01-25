@@ -1,0 +1,29 @@
+{
+  "$and": [
+    {
+      "partnerId": {
+        "$eq": "SYNNEXCANADA"
+      }
+    },
+    {
+      "totalItemCount": {
+        "$lt": 100
+      }
+    },
+    {
+      "processingDate": {
+        "$lte": "2022-07-19"
+      }
+    },
+    {
+      "fileCreationTime": {
+        "$like": "%2020-04-01"
+      }
+    },
+    {
+      "createdAt": {
+        "$between": ["val", "val"]
+      }
+    }
+  ]
+}

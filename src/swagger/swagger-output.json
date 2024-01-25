@@ -1,0 +1,2136 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "4S backend-API",
+    "description": "Description",
+    "version": "1.0.0"
+  },
+  "host": "",
+  "basePath": "/v1",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/data-models/get-data-by-json-query": {
+      "post": {
+        "tags": [
+          "Data Flow"
+        ],
+        "description": "Get Data By JSON Query",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/data-models/get-data-by-id": {
+      "post": {
+        "tags": [
+          "Data Flow"
+        ],
+        "description": "Get Data By JSON Query",
+        "parameters": [
+          {
+            "name": "Params",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "tableName": {
+                  "type": "string",
+                  "example": "User"
+                },
+                "id": {
+                  "type": "number",
+                  "example": 10
+                },
+                "softDelete": {
+                  "type": "boolean",
+                  "example": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data-models/create-record-by-json-query": {
+      "post": {
+        "tags": [
+          "Data Flow"
+        ],
+        "description": "Create Record By JSON Query",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Params",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "type": "string",
+                  "example": "Entity"
+                },
+                "input": {
+                  "type": "object",
+                  "properties": {
+                    "column 1": {
+                      "type": "string",
+                      "example": "data"
+                    },
+                    "column 2": {
+                      "type": "string",
+                      "example": "data"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/data-models/bulk-insert-record-by-json-query": {
+      "post": {
+        "tags": [
+          "Data Flow"
+        ],
+        "description": "Bulk Insert Records By JSON Query",
+        "parameters": [
+          {
+            "name": "Params",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "type": "string",
+                  "example": "Entity"
+                },
+                "input": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "column 1": {
+                        "type": "string",
+                        "example": "data"
+                      },
+                      "column 2": {
+                        "type": "string",
+                        "example": "data"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data-models/update-record-by-json-query": {
+      "put": {
+        "tags": [
+          "Data Flow"
+        ],
+        "description": "Update Record By JSON Query",
+        "parameters": [
+          {
+            "name": "Params",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "type": "string",
+                  "example": "User"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "input": {
+                      "type": "object",
+                      "properties": {
+                        "column 1": {
+                          "type": "string",
+                          "example": "data"
+                        },
+                        "column 2": {
+                          "type": "string",
+                          "example": "data"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data-models/bulk-update-record-by-json-query": {
+      "put": {
+        "tags": [
+          "Data Flow"
+        ],
+        "description": "Bulk Update Records By JSON Query",
+        "parameters": [
+          {
+            "name": "Params",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "type": "string",
+                  "example": "Entity"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number",
+                        "example": 1
+                      },
+                      "input": {
+                        "type": "object",
+                        "properties": {
+                          "column 1": {
+                            "type": "string",
+                            "example": "data"
+                          },
+                          "column 2": {
+                            "type": "string",
+                            "example": "data"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data-models/delete-record-by-json-query": {
+      "delete": {
+        "tags": [
+          "Data Flow"
+        ],
+        "description": "Delete Record By JSON Query",
+        "parameters": [
+          {
+            "name": "Params",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "type": "string",
+                  "example": "Entity"
+                },
+                "id": {
+                  "type": "number",
+                  "example": 1
+                },
+                "deleteSoft": {
+                  "type": "boolean",
+                  "example": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data-models/bulk-delete-record-by-json-query": {
+      "delete": {
+        "tags": [
+          "Data Flow"
+        ],
+        "description": "Bulk Delete Records By JSON Query",
+        "parameters": [
+          {
+            "name": "Params",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "type": "string",
+                  "example": "Entity"
+                },
+                "ids": {
+                  "type": "array",
+                  "example": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/user/register": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "description": "Register User",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Params",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": ""
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": ""
+                },
+                "password": {
+                  "type": "string",
+                  "example": ""
+                },
+                "email": {
+                  "type": "string",
+                  "example": ""
+                },
+                "phoneNumber": {
+                  "type": "string",
+                  "example": ""
+                },
+                "siteId": {
+                  "type": "string",
+                  "example": ""
+                },
+                "type": {
+                  "type": "string",
+                  "example": ""
+                },
+                "roleIdz": {
+                  "type": "array",
+                  "example": [],
+                  "items": {}
+                },
+                "pushNotificationToken": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/user/login": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "description": "User Login",
+        "parameters": [
+          {
+            "name": "LoginParams",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "example": ""
+                },
+                "password": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          }
+        }
+      }
+    },
+    "/user/": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "description": "Update User Profile",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "UpdateUserProfileData",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": ""
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": ""
+                },
+                "password": {
+                  "type": "string",
+                  "example": ""
+                },
+                "phoneNumber": {
+                  "type": "string",
+                  "example": ""
+                },
+                "siteId": {
+                  "type": "string",
+                  "example": ""
+                },
+                "type": {
+                  "type": "string",
+                  "example": "admin"
+                },
+                "roleIdz": {
+                  "type": "array",
+                  "example": [
+                    ""
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "pushNotificationToken": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/user/{userId}": {
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "description": "Soft Delete User",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID of the user to soft delete."
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/user/change-password": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "description": "Update Password",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "ChangePasswordParams",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "currentPassword": {
+                  "type": "string",
+                  "example": ""
+                },
+                "newPassword": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/user/forgot-password": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "description": "Request Password Reset",
+        "parameters": [
+          {
+            "name": "ResetParams",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          }
+        }
+      }
+    },
+    "/user/reset-password": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "description": "Reset User Password",
+        "parameters": [
+          {
+            "name": "ResetPasswordParams",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "password": {
+                  "type": "string",
+                  "example": ""
+                },
+                "token": {
+                  "type": "string",
+                  "example": ""
+                },
+                "userId": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          }
+        }
+      }
+    },
+    "/site/{siteId}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/role-resource-permission/": {
+      "put": {
+        "description": "",
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          }
+        }
+      }
+    },
+    "/role-resource-permission/{roleId}": {
+      "delete": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/role/": {
+      "post": {
+        "tags": [
+          "Role"
+        ],
+        "description": "Create Role",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/role/{roleId}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "roleId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "roleId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/sensor/": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/sensor/{id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/sensor/upload-sensor-data": {
+      "post": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/sensor/bulk-import/{protocol}": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "protocol",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/sensor/wirepas/building": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/sensor/wirepas/floorlevel": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/sensor/wirepas/floorlevel/{floorlevelId}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "floorlevelId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "floorlevelId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/sensor/wirepas/building/{buildingId}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "buildingId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "buildingId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/sensor/wirepas/floorlevel-image/{floorlevelId}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "floorlevelId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/area/": {
+      "post": {
+        "tags": [
+          "Area"
+        ],
+        "description": "Create Area",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Params",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "wirepasFloorlevelId": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "coordinates": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "latitude": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "longitude": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "altitude": {
+                            "type": "number",
+                            "example": 0
+                          }
+                        }
+                      }
+                    },
+                    "r": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "g": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "b": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "a": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "siteId": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                },
+                "protocol": {
+                  "type": "string",
+                  "example": "wirepas"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/area/{areaId}": {
+      "put": {
+        "tags": [
+          "Area"
+        ],
+        "description": "Update Area",
+        "parameters": [
+          {
+            "name": "areaId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID of the user to update."
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "UpdateAreaData",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "wirepasFloorlevelId": {
+                  "type": "string",
+                  "example": ""
+                },
+                "description": {
+                  "type": "string",
+                  "example": ""
+                },
+                "coordinates": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "latitude": {
+                        "type": "number",
+                        "example": 0
+                      },
+                      "longitude": {
+                        "type": "number",
+                        "example": 0
+                      },
+                      "altitude": {
+                        "type": "number",
+                        "example": 0
+                      }
+                    }
+                  }
+                },
+                "g": {
+                  "type": "string",
+                  "example": ""
+                },
+                "b": {
+                  "type": "string",
+                  "example": ""
+                },
+                "a": {
+                  "type": "string",
+                  "example": ""
+                },
+                "siteId": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Area"
+        ],
+        "description": " Delete Area",
+        "parameters": [
+          {
+            "name": "areaId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID of the area to delete."
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/alert/": {
+      "post": {
+        "tags": [
+          "Alert"
+        ],
+        "description": "Create Alert",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "AlertParams",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "siteId": {
+                  "type": "string",
+                  "example": ""
+                },
+                "alertRuleId": {
+                  "type": "string",
+                  "example": ""
+                },
+                "sensorId": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/alert/{alertId}": {
+      "delete": {
+        "tags": [
+          "Alert"
+        ],
+        "description": "Soft Delete Alert",
+        "parameters": [
+          {
+            "name": "alertId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID of the alert to soft delete."
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/alert-rule/": {
+      "post": {
+        "tags": [
+          "AlertRule"
+        ],
+        "description": "Create AlertRule",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Params",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "alertType": {
+                  "type": "string",
+                  "example": "personnel"
+                },
+                "alertSeverity": {
+                  "type": "string",
+                  "example": "low"
+                },
+                "alertCriteria": {
+                  "type": "string",
+                  "example": "measurment bound"
+                },
+                "actionType": {
+                  "type": "string",
+                  "example": "email"
+                },
+                "recepients": {
+                  "type": "array",
+                  "example": [
+                    ""
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "sensorId": {
+                  "type": "string",
+                  "example": ""
+                },
+                "siteId": {
+                  "type": "string",
+                  "example": ""
+                },
+                "description": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/alert-rule/{alertRuleId}": {
+      "put": {
+        "tags": [
+          "AlertRule"
+        ],
+        "description": "Update AlertRule",
+        "parameters": [
+          {
+            "name": "alertRuleId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID of the alertRule to update."
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "UpdateAlertRuleData",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "alertType": {
+                  "type": "string",
+                  "example": "personnel"
+                },
+                "alertSeverity": {
+                  "type": "string",
+                  "example": "low"
+                },
+                "alertCriteria": {
+                  "type": "string",
+                  "example": "measurment bound"
+                },
+                "actionType": {
+                  "type": "string",
+                  "example": "email"
+                },
+                "recepients": {
+                  "type": "array",
+                  "example": [
+                    ""
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "sensorId": {
+                  "type": "string",
+                  "example": ""
+                },
+                "siteId": {
+                  "type": "string",
+                  "example": ""
+                },
+                "description": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AlertRule"
+        ],
+        "description": " Delete AlertRule",
+        "parameters": [
+          {
+            "name": "alertRuleId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID of the alertRule to delete."
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/personnel/": {
+      "post": {
+        "description": "",
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          }
+        }
+      }
+    },
+    "/personnel/{personnelId}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "personnelId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          }
+        }
+      }
+    },
+    "/asset/": {
+      "post": {
+        "tags": [
+          "Asset"
+        ],
+        "description": "Create Asset",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "CreateAssetParams",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": ""
+                },
+                "model": {
+                  "type": "string",
+                  "example": ""
+                },
+                "serialNumber": {
+                  "type": "string",
+                  "example": ""
+                },
+                "warrantyDate": {
+                  "type": "string",
+                  "example": "2023-09-20T10:00:00Z"
+                },
+                "issueDate": {
+                  "type": "string",
+                  "example": "2023-09-20T10:00:00Z"
+                },
+                "wirepasFloorLevelId": {
+                  "type": "string",
+                  "example": ""
+                },
+                "wirepasBuildingId": {
+                  "type": "string",
+                  "example": ""
+                },
+                "siteId": {
+                  "type": "string",
+                  "example": ""
+                },
+                "deviceType": {
+                  "type": "string",
+                  "example": ""
+                },
+                "image": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/asset/{assetId}": {
+      "put": {
+        "tags": [
+          "Asset"
+        ],
+        "description": "Update Asset",
+        "parameters": [
+          {
+            "name": "assetId",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the asset to update."
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "UpdateAssetParams",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": ""
+                },
+                "model": {
+                  "type": "string",
+                  "example": ""
+                },
+                "serialNumber": {
+                  "type": "string",
+                  "example": ""
+                },
+                "warrantyDate": {
+                  "type": "string",
+                  "example": "{{currentDate}}"
+                },
+                "issueDate": {
+                  "type": "string",
+                  "example": "{{currentDate}}"
+                },
+                "wirepasFloorLevelId": {
+                  "type": "string",
+                  "example": ""
+                },
+                "wirepasBuildingId": {
+                  "type": "string",
+                  "example": ""
+                },
+                "siteId": {
+                  "type": "string",
+                  "example": ""
+                },
+                "deviceType": {
+                  "type": "string",
+                  "example": ""
+                },
+                "image": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Asset"
+        ],
+        "description": "Update Asset",
+        "parameters": [
+          {
+            "name": "assetId",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the asset to update."
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/asset/bulk-import": {
+      "post": {
+        "description": "",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "singleFile",
+            "in": "formData",
+            "type": "file",
+            "required": true,
+            "description": "Some description..."
+          },
+          {
+            "name": "UpdateAssetParams",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "protocole": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/asset-sensor/{assetSensorId}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "assetSensorId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/asset-sensor/": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/asset-sensor/link": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "example": "any"
+                },
+                "siteId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}

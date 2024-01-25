@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "nodes": [
+    {
+      "network_name": null,
+      "node_name": "RHT",
+      "is_approved": true,
+      "is_virtual": false,
+      "online_status": 0,
+      "online_status_string": "offline",
+      "voltage": 3.04,
+      "altitude": 5,
+      "latitude": 24,
+      "longitude": 46,
+      "position_pixel_x": 150,
+      "position_pixel_y": 180,
+      "position_meter_x": 4.64,
+      "position_meter_y": 1.7,
+      "positioning_role": 2,
+      "positioning_role_string": "tag",
+      "measurement_time_epoch": 1666324439643,
+      "measurement_time": "10/21/2022, 1:58:56 AM",
+      "positioning_time_epoch": 1666324439643,
+      "positioning_time": "10/21/2022, 1:58:56 AM",
+      "building_id": "05d44f77-1928-1c61-a612-01f5d6fbe58a",
+      "building_name": "CSource Office",
+      "floor_plan_id": "3e2f627b-9364-cf38-0021-975ddbd153ca",
+      "floor_plan_name": "CSource Demo",
+      "areas": [
+        {
+          "id": "060b8491-1f69-fac0-5cae-9a93602f645e",
+          "name": "Office 1"
+        }
+      ],
+      "site": {
+        "id": "46d81d45-ed7a-4ce8-b19b-fbbdb714a6ad",
+        "name": "New SIte"
+      },
+      "node_address": 992186693,
+      "network_address": 7156763
+    },
+    {
+      "network_name": null,
+      "node_name": "RHT",
+      "is_approved": true,
+      "is_virtual": false,
+      "online_status": 0,
+      "online_status_string": "offline",
+      "voltage": 3.04,
+      "altitude": 5.9999941838905215,
+      "latitude": 24.667326727439747,
+      "longitude": 46.70651557026723,
+      "position_pixel_x": 150,
+      "position_pixel_y": 180,
+      "position_meter_x": 4.64,
+      "position_meter_y": 1.7,
+      "positioning_role": 2,
+      "positioning_role_string": "tag",
+      "measurement_time_epoch": 1666324439643,
+      "measurement_time": "10/21/2022, 1:58:56 AM",
+      "positioning_time_epoch": 1666324439643,
+      "positioning_time": "10/21/2022, 1:58:56 AM",
+      "building_id": "05d44f77-1928-1c61-a612-01f5d6fbe58a",
+      "building_name": "CSource Office",
+      "floor_plan_id": "53b296c4-db85-24d5-1369-39e5d9e7aa31",
+      "floor_plan_name": "CSource Demo",
+      "areas": [
+        {
+          "id": "5b72a208-4cbd-d67c-412e-a2f9c86945a1",
+          "name": "Office 1"
+        }
+      ],
+      "site": {
+        "id": "42d6c2db-85af-478d-819d-2193a4c32e28",
+        "name": "New SIte"
+      },
+      "node_address": 992286697,
+      "network_address": 7156763
+    }
+  ]
+}
